@@ -1,3 +1,15 @@
 [submodule "frontend_EmpleaMe"]
 	path = frontend_EmpleaMe
 	url = https://github.com/2n-DAW/frontend_EmpleaMe.git
+[submodule "backend_EmpleaMe"]
+	path = backend_EmpleaMe
+	url = https://github.com/2n-DAW/backend_EmpleaMe.git
+[submodule "backend-proxy-fastify"]
+	path = backend-proxy-fastify
+	url = https://github.com/2n-DAW/backend-proxy-fastify.git
+[submodule "backend-prisma-EmpleaMe"]
+	path = backend-prisma-EmpleaMe
+	url = https://github.com/2n-DAW/backend-prisma-EmpleaMe.git
+[submodule "backend-fastify-typeORM-EmpleaMe"]
+	path = backend-fastify-typeORM-EmpleaMe
+	url = https://github.com/2n-DAW/backend-fastify-typeORM-EmpleaMe.git
