@@ -60,6 +60,8 @@ La vista de inicio es la página principal de **EmpleaMe**, diseñada para ser a
 - **Eslogan y Barra de Búsqueda**: Muestra el eslogan y una barra de búsqueda para encontrar empleos por palabra clave.
 - **Categorías de Empleo**: Iconos y categorías que representan sectores profesionales.
 - **Navegación de Categorías**: Flechas de navegación para desplazarse entre categorías.
+
+  ![Vista de Inicio](images/home.png)
   
 ### Vista de Ofertas
 
@@ -69,6 +71,10 @@ La vista de **Ofertas** permite a los usuarios explorar y filtrar empleos dispon
 - **Listado de Ofertas**: Tarjetas con información de cada oferta, como título del puesto, empresa, fecha y salario.
 - **Paginación**: Navegación entre páginas de resultados.
 
+  
+![Vista de Ofertas](images/shop.png)
+
+
 ### Vista de Detalles de una Oferta
 
 La vista de **Detalles de una Oferta** permite a los usuarios ver toda la información de una oferta específica.
@@ -76,7 +82,11 @@ La vista de **Detalles de una Oferta** permite a los usuarios ver toda la inform
 - **Galería de Imágenes**: Carrusel de imágenes relacionadas con la oferta.
 - **Información de la Oferta**: Título del puesto, descripción, autor y salario.
 - **Sección de Comentarios**: Los usuarios pueden comentar e interactuar sobre la oferta.
+
   
+![Vista de Detalles](images/details.png)
+
+
 ### Vista de Perfil
 
 La vista de **Perfil** permite a las empresas gestionar su información y acceder a funcionalidades relacionadas con sus ofertas y candidatos.
@@ -86,12 +96,20 @@ La vista de **Perfil** permite a las empresas gestionar su información y accede
 - **Listado de Ofertas Publicadas**: Detalles de cada oferta publicada por la empresa.
 - **Información de las inscripciones** Detalles sobre el estado de casa postulación de cada candidato.
 
+  
+![Vista de Perfil](images/profile.png)
+
+
 ### Vista de Registro
 
 La vista de **Registro** permite a los nuevos usuarios crear una cuenta en la plataforma.
 
 - **Formulario de Registro**: Campos para nombre de usuario, email, contraseña y tipo de usuario.
 - **Botón de Registro**: Envía los datos para crear la cuenta.
+
+
+  ![Vista de Registro](images/register.png)
+
   
 ### Vista de Login
 
@@ -100,6 +118,10 @@ La vista de **Login** permite a los usuarios existentes acceder a su cuenta en *
 - **Formulario de Inicio de Sesión**: Campos para email y contraseña.
 - **Botón de Login**: Inicia sesión en la plataforma.
 - **Enlace para Registro**: Mensaje para usuarios que aún no tienen una cuenta.
+
+  
+![Vista de Login](images/login.png)
+
 
 ---
 
