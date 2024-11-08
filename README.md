@@ -1,6 +1,6 @@
 # EmpleaMe
 
-EmpleaMe es un proyecto de clase desarrollado como una aplicación web de búsqueda de empleo. La aplicación permite a los usuarios buscar y postularse a empleos disponibles, además de gestionar sus perfiles como candidatos, empresas o adimnistradores(recruiters) que verifican las inscripciones a una oferta.
+EmpleaMe es un proyecto de clase desarrollado como una aplicación web de búsqueda de empleo. La aplicación permite a los usuarios buscar y postularse a empleos disponibles, además de gestionar sus perfiles como candidatos, empresas o administradores (recruiters) que verifican las inscripciones a una oferta.
 
 ## Tabla de Contenidos
 - [Características](#características)
@@ -13,27 +13,60 @@ EmpleaMe es un proyecto de clase desarrollado como una aplicación web de búsqu
 
 ## Características
 
-- **Búsqueda de empleos**: Filtros básicos como ubicación, categoría, salario, jornada, contrato o busqueda por nombre.
-- **Registro y autenticación**: Los usuarios pueden registrarse y autenticarse como candidatos(client), empresas(company) o administradores(recruiter).
+- **Búsqueda de empleos**: Filtros básicos como ubicación, categoría, salario, jornada, contrato o búsqueda por nombre.
+- **Registro y autenticación**: Los usuarios pueden registrarse y autenticarse como candidatos (client), empresas (company) o administradores (recruiter).
 - **Perfiles básicos**: Los candidatos pueden crear un perfil sencillo con información personal y profesional.
-- **Panel para publicar empleos**: Las empresas pueden publicar y gestionar ofertas de empleo al igual que los adiministradores.
+- **Panel para publicar empleos**: Las empresas pueden publicar y gestionar ofertas de empleo al igual que los administradores.
 
 ## Tecnologías Utilizadas
 
 ### Frontend
 
-- **Angular**: Aplicación sesarrollada en Angular StandAlone, encargada de la interfaz de usuario y las interacciones de todos los tipos de usuarios.
+- **Angular**: Aplicación desarrollada en Angular StandAlone, encargada de la interfaz de usuario y las interacciones de todos los tipos de usuarios.
+
+<p align="center">
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=angular,typescript,html,css" alt="Tecnologías de Frontend" />
+    </a>
+</p>
 
 ### Backend
 
-1. **Node.js con Express y Mongoose**: Backend principal que gestiona los usuarios de tipo "cliente" (quienes buscan empleo) y todas las funcionalidades relacionadas con la búsqueda de empleos, gestión de perfiles de candidatos y acciones ineréntes al tipo de usuario.
+1. **Node.js con Express y Mongoose**: Backend principal que gestiona los usuarios de tipo "cliente" (quienes buscan empleo) y todas las funcionalidades relacionadas con la búsqueda de empleos, gestión de perfiles de candidatos y acciones inherentes al tipo de usuario.
+
+   <p align="center">
+       <a href="https://skillicons.dev">
+           <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" alt="Tecnologías del Backend de Cliente" />
+       </a>
+   </p>
+
 2. **Express con TypeScript y Prisma**: Backend secundario que se encarga de la creación de ofertas de empleo y las acciones realizadas por los usuarios de tipo "Company" (empresas).
+
+   <p align="center">
+       <a href="https://skillicons.dev">
+           <img src="https://skillicons.dev/icons?i=typescript,express,prisma,mongodb" alt="Tecnologías del Backend de Company" />
+       </a>
+   </p>
+
 3. **Fastify con TypeScript y TypeORM**: Backend que gestiona a los usuarios de tipo "Recruiter", quienes revisan y validan las inscripciones de empleo antes de enviarlas a las empresas (usuarios tipo "Company").
+   
+   - **Nota**: Fastify no tiene icono disponible. Este backend usa **TypeScript** y **TypeORM** además de **MongoDB**.
+   
+   <p align="center">
+       <a href="https://skillicons.dev">
+           <img src="https://skillicons.dev/icons?i=typescript,mongodb" alt="Tecnologías del Backend de Recruiter" />
+       </a>
+   </p>
+
 4. **Fastify con TypeScript** (con patrón Saga): Backend dedicado a gestionar el login y registro de todos los usuarios. Utiliza el patrón Saga para coordinar las transacciones y asegurar la coherencia en el proceso de autenticación.
 
-### Base de Datos
+   - **Nota**: Fastify no tiene icono disponible. Este backend usa **TypeScript**.
 
-- **MongoDB**: Todos los backends, excepto el backend de enrutamiento, acceden a la misma base de datos MongoDB, permitiendo una integración centralizada de los datos.
+   <p align="center">
+       <a href="https://skillicons.dev">
+           <img src="https://skillicons.dev/icons?i=typescript" alt="Tecnologías del Backend de Autenticación" />
+       </a>
+   </p>
 
 ---
 
@@ -71,7 +104,6 @@ La vista de **Ofertas** permite a los usuarios explorar y filtrar empleos dispon
 - **Listado de Ofertas**: Tarjetas con información de cada oferta, como título del puesto, empresa, fecha y salario.
 - **Paginación**: Navegación entre páginas de resultados.
 
-  
 ![Vista de Ofertas](images/shop.png)
 
 
@@ -83,7 +115,6 @@ La vista de **Detalles de una Oferta** permite a los usuarios ver toda la inform
 - **Información de la Oferta**: Título del puesto, descripción, autor y salario.
 - **Sección de Comentarios**: Los usuarios pueden comentar e interactuar sobre la oferta.
 
-  
 ![Vista de Detalles](images/details.png)
 
 
@@ -94,9 +125,8 @@ La vista de **Perfil** permite a las empresas gestionar su información y accede
 - **Información del Usuario**: Muestra el avatar, nombre de la empresa y botón de edición de perfil.
 - **Navegación de Opciones**: Pestañas para gestionar ofertas, inscripciones y seguidores.
 - **Listado de Ofertas Publicadas**: Detalles de cada oferta publicada por la empresa.
-- **Información de las inscripciones** Detalles sobre el estado de casa postulación de cada candidato.
+- **Información de las inscripciones**: Detalles sobre el estado de cada postulación de cada candidato.
 
-  
 ![Vista de Perfil](images/profile.png)
 
 
@@ -107,8 +137,7 @@ La vista de **Registro** permite a los nuevos usuarios crear una cuenta en la pl
 - **Formulario de Registro**: Campos para nombre de usuario, email, contraseña y tipo de usuario.
 - **Botón de Registro**: Envía los datos para crear la cuenta.
 
-
-  ![Vista de Registro](images/register.png)
+![Vista de Registro](images/register.png)
 
   
 ### Vista de Login
@@ -119,7 +148,6 @@ La vista de **Login** permite a los usuarios existentes acceder a su cuenta en *
 - **Botón de Login**: Inicia sesión en la plataforma.
 - **Enlace para Registro**: Mensaje para usuarios que aún no tienen una cuenta.
 
-  
 ![Vista de Login](images/login.png)
 
 
@@ -127,5 +155,4 @@ La vista de **Login** permite a los usuarios existentes acceder a su cuenta en *
 
 ## Contribución
 
-Este proyeco ha sido realizado en conjunto por [Paco Montés](https://github.com/fmontesdev) y por  [Diego Llorens](https://github.com/Llorens19).
-
+Este proyecto ha sido realizado en conjunto por [Paco Montés](https://github.com/fmontesdev) y por [Diego Llorens](https://github.com/Llorens19).
