@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"id_workingDay":{"$numberInt":"1"}},"name":"id_workingDay_1","background":true,"unique":true}],"uuid":"f567305ab7f7449793d19ee517a36e10","collectionName":"workingdays","type":"collection"}

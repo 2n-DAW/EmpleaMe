@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"id_province":{"$numberInt":"1"}},"name":"id_province_1","background":true,"unique":true}],"uuid":"702005f8d88f49558099dc2e78796c7e","collectionName":"provinces","type":"collection"}

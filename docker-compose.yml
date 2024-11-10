@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+
+  mongo:
+    image: mongo:8.0
+    restart: unless-stopped
+    container_name: mongo-empleame
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_DATABASE: mydb
+    volumes:
+      - ./mongoDB/init/restore.sh:/docker-entrypoint-initdb.d/restore.sh:ro
+      - ./mongoDB/dump:/dump
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - empleame-network
+
+  backend:
+    build:
+      context: ./backend_EmpleaMe
+      dockerfile: Dockerfile
+    container_name: backend_empleame
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://root:secret@mongo:27017/mydb?authSource=admin
+      - PORT=3000
+      - CORSURL=http://localhost:8080
+      - ACCESS_TOKEN_EXPIRATION=1d
+      - REFRESH_TOKEN_EXPIRATION=15d
+      - ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
+      - REFRESH_TOKEN_SECRET=${REFRESH_TOKEN_SECRET}
+    ports:
+      - "3000:3000"
+    command: ["npm", "run", "dev"]
+    networks:
+      - empleame-network
+
+  frontend:
+    build:
+      context: ./frontend_EmpleaMe
+      dockerfile: Dockerfile
+    container_name: frontend_empleame
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:8080"
+    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      - empleame-network
+
+  mongo-express:
+    image: mongo-express:1.0.2-18-alpine3.18
+    restart: unless-stopped
+    container_name: expresMongo-empleame
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: secret
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_BASICAUTH: false
+    depends_on:
+      - mongo    
+    ports:
+      - "8081:8081"
+    networks:
+      - empleame-network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  empleame-network:
+    driver: bridge
